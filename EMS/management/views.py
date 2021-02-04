@@ -267,7 +267,7 @@ class EmployeeListView(PermissionRequiredMixin, ListView):
         context['title'] = 'List Employee'
         context['btn_title'] = 'Add Employee'
         context['add_url'] = 'management:add_employee'
-        context['add_obj_perm'] = 'management.add_employeemodule'
+        context['add_obj_perm'] = 'management.add_empoyeemodule'
         return context
 
     

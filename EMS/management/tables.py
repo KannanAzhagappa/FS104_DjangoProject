@@ -32,7 +32,7 @@ class DepartmentTable(tables.Table):
     description = tables.Column(verbose_name='Description')
     edit = tables.TemplateColumn(
         """<a class="btn btn-info btn-sm" href='{%url "management:edit_department" record.id %}'>Edit</a>
-           <a class="btn btn-info btn-sm" href='{%url "management:delete_department" record.id %}'>Delete</a>
+           <a class="btn btn-danger btn-sm" href='{%url "management:delete_department" record.id %}'>Delete</a>
         """, verbose_name='Action', orderable=False)    
 
     def before_render(self, request):
@@ -84,7 +84,7 @@ class EmployeeTable(tables.Table):
                             args=[A('pk')], orderable=False)
     edit = tables.TemplateColumn(
         """<a class="btn btn-info btn-sm" href='{%url "management:edit_employee" record.id %}'>Edit</a>
-           <a class="btn btn-info btn-sm" href='{%url "management:delete_employee" record.id %}'>Delete</a>
+           <a class="btn btn-danger btn-sm" href='{%url "management:delete_employee" record.id %}'>Delete</a>
         """, verbose_name='Action', orderable=False)    
 
     def before_render(self, request):
