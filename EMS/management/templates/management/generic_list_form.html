@@ -1,0 +1,15 @@
+{% extends "management/base.html" %}
+{% load custom_filters %}
+{% load django_tables2 %}
+{% block Content_Area %}
+    <div style="margin-top: 80px;">
+        <h1>{{title}}</h1>
+        {%if add_obj_perm|req_perms:request.user %}
+        <a href="{% url  add_url  %}" style="float: right; margin-bottom: 10px;" class="btn btn-primary btn-sm">{{btn_title}}</a>
+        {%endif%}
+    </div>
+    
+    <div>
+        {% render_table table %}
+    </div>
+{% endblock Content_Area %}

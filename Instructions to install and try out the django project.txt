@@ -1,0 +1,19 @@
+- Clone this Git Repo
+- Create a Virtual Environment
+- Activate Bat
+- pip install -r requirements.txt
+- access this link: http://127.0.0.1:8000/auth/login/
+
+Login Details:
+
+Superuser
+Username: kannan
+password: KA180990
+
+Manager
+Username: gabriel
+password: KA180990
+
+Employee
+Username: ibnu
+password: KA180990

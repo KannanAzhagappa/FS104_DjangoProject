@@ -1,0 +1,41 @@
+{% extends "management/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load custom_filters %}
+
+{% block Style_sheets %}
+<link href="{% static " assets/css/nav_tab.css" %}" type="text/css" rel="stylesheet" />
+{{form.media.css}}
+<style>
+    .required {
+        color: red;
+    }
+</style>
+{% endblock Style_sheets %}
+
+{% block Content_Area %}
+<div class="container mtb">
+    <div class="form-heading">{{ title }}</div>
+    <div class="form-wrapper panel panel-default">
+        <div class="form-container">
+            <div class="panel-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    </br></br></br>
+                    <b>{{message}} : {{name}}</b>
+                    </br></br></br>
+                    <a href="{% url  back_url  %}" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-success">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock Content_Area %}
+
+{% block Java_Scripts %}
+{{ form.media.js }}
+<script>
+</script>
+
+{% endblock %}

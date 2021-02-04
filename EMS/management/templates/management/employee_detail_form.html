@@ -1,0 +1,19 @@
+{% extends "management/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block Content_Area %}
+<div style="margin-top: 80px;">
+    <h4>{{title}}</h4>
+    <div>First Name : {{object.first_name}}</div>
+    <div>Last Name : {{object.last_name}}</div>
+    <div>Department : {{object.department}}</div>
+    <div>Category : {{object.category}}</div>
+    <div>Date Of Birth : {{object.date_of_birth}}</div>
+    <div>Date Of Join : {{object.date_of_join}}</div>
+    <div>Employee ID : {{object.employee_id}}</div>
+    <div>Address : {{object.address}}</div>
+    <div>Phone Number : {{object.phone_no}}</div>
+    <div>Managed By : {% for item in object.manage_employee.all%} {{item}}, {%endfor%}</div>
+    <div>Status : {{object.get_status_display}}</div>
+{% endblock Content_Area %}

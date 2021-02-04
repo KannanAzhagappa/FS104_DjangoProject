@@ -1,0 +1,24 @@
+{% extends "management/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block Content_Area %}
+<div style="margin-top: 80px;">
+    <h1>{{title}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% for input_form in form %}
+        <div class="form-group">
+            <label for="email">{{input_form.label}}</label>
+            <span class="required"> * </span>
+
+            {% render_field input_form class+="form-control" placeholder=input_form.label %}
+            {{input_form.errors}}
+        </div>
+        {% endfor %}
+        <a href="{% url  back_url  %}" class="btn btn-default">Cancel</a>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+</div>
+{% endblock Content_Area %}
